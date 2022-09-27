@@ -1,0 +1,55 @@
+:root{
+    --light: #d9d9d9;
+    --dark: #050505;
+}
+
+/* ------preloader------ */
+#preloader{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    top: 0;
+    left: 0;
+	overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    z-index: 110;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #050505;
+    background-image: url('/loader.gif');
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition: 1.5s cubic-bezier(.12,.86,.2,.98);
+}
+#preloader-text{
+    color: transparent;
+    position: fixed;
+    font-family: 'anton', 'arial';
+    letter-spacing: 5px;
+    font-size: 12vh;
+    z-index: 100;
+	color: var(--light);
+	transition : 1s ease-out;
+    animation: loading 2s infinite;
+}
+
+@media screen and (max-width:630px), (orientation: portrait){
+	#preloader-text{
+		font-size: 6.5vh;
+		letter-spacing: 3px;
+	}
+}
+
+@keyframes loading {
+    0%, 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: .4;
+    }
+}
