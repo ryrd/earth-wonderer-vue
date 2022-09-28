@@ -4,8 +4,8 @@
     import AboutSite from '../components/sections/AboutSite.vue';
     import Destinations from '../components/sections/Destinations.vue';
     import { useModeStore } from '../stores/modeStore';
-    // import PageTransitionOpen from '~~/components/parts/PageTransitionOpen.vue';
-    // import PageTransitionClose from '../components/parts/PageTransitionClose.vue';
+    import PageTransitionOpen from '../components/parts/PageTransitionOpen.vue';
+    import PageTransitionClose from '../components/parts/PageTransitionClose.vue';
     const mode = useModeStore();
     </script>
     
@@ -16,8 +16,8 @@
             <AboutSite />
             <Destinations/>
     
-            <!-- <PageTransitionOpen direction="detail"/>
-            <PageTransitionClose from="detail"/> -->
+            <!-- <PageTransitionOpen direction="detail"/> -->
+            <!-- <PageTransitionClose from="detail"/> -->
         </div>
     </template>
     

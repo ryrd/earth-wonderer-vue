@@ -8,6 +8,7 @@
     import FullPhoto from '../components/sections/FullPhoto.vue';
     import { useModeStore } from '../stores/modeStore';
     import PageTransitionOpen from '../components/parts/PageTransitionOpen.vue';
+    import PageTransitionClose from '../components/parts/PageTransitionClose.vue';
     import { onMounted, ref } from 'vue';
     import { useRoute, useRouter } from 'vue-router';
     
@@ -41,8 +42,8 @@
     
             <FullPhoto :selectedPhoto="selectedPhoto" @set-selected-photo="setSelectedPhoto" />
     
-            <!-- <PageTransitionOpen direction="home"/>
-            <PageTransitionClose from="home"/> -->
+            <!-- <PageTransitionOpen direction="home"/> -->
+            <!-- <PageTransitionClose from="home"/> -->
         </div>
     </template>
     
