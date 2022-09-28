@@ -2,7 +2,6 @@
 import HomeHeading from '../parts/HomeHeading.vue';
 import DestinationBox from '../parts/DestinationBox.vue';
 import DATA from '../../Data';
-
 </script>
 
 <template>

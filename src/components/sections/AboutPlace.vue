@@ -32,7 +32,7 @@ const {desc, mapLink, APlocation} = defineProps<props>();
             <div class='relative w-[60%] h-[60%] flex flex-col justify-center items-center z-10'>
             <span class='absolute top-1/2 left-1/2 -translate-x-1/2 font-oswald font-light animate-pulse z-0 dark:text-white'>loading...</span>
             <div class='flex text-[3vw] sm:text-[1.2vw] w-[100%] md:w-[80%] dark:text-white'>
-                <img :src="mode.darkMode ? 'src/assets/location-logo-dark.svg' : 'src/assets/location-logo-light.svg'" alt="location logo" class='mr-2 w-[6%] md:w-[6%]'/>
+                <img :src="mode.darkMode ? '/location-logo-dark.svg' : '/location-logo-light.svg'" alt="location logo" class='mr-2 w-[6%] md:w-[6%]'/>
                 {{APlocation}}
             </div>
             <div class='mt-2 w-[100%] sm:w-[80%] portrait:h-[20vh] aspect-[4/3] relative overflow-hidden'>

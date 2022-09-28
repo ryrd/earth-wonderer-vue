@@ -8,8 +8,3 @@ import Footer from './components/parts/Footer.vue';
     <Footer/>
   </div>
 </template>
-
-<style>
-/* route transitions */
-
-</style>

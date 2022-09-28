@@ -15,33 +15,31 @@ const route = useRoute();
 
 onMounted(() => {
     if(route.path === '/'){
-    const aboutImgAnim = gsap.timeline({
-        scrollTrigger: {
-            trigger: aboutContainer.value,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1.6,
-            // markers: true
-        }
+        const aboutImgAnim = gsap.timeline({
+            scrollTrigger: {
+                trigger: aboutContainer.value,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1.6,
+            }
         })
         
         const aboutImgAnim2 = gsap.timeline({
-        scrollTrigger: {
-            trigger: aboutContainer.value,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1.6,
-            // markers: true
-        }
+            scrollTrigger: {
+                trigger: aboutContainer.value,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1.6,
+            }
         })
         
         aboutImgAnim.to(aboutImgOne.value, {
-        yPercent: -90,
-        rotate: 8
+            yPercent: -90,
+            rotate: 8
         });
         aboutImgAnim2.to(aboutImgTwo.value, {
-        yPercent: -60,
-        rotate: -8
+            yPercent: -60,
+            rotate: -8
         });
     }
 })

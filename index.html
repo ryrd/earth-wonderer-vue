@@ -40,14 +40,16 @@
             title.style.opacity = '1';
             title.style.transform = 'scale(1) translate(-50%, 0%)';
             title.style.filter = 'blur(0px)';
-          }, 700);
+          }, 800);
         }
 
-        html.style.height = 'auto';
-        html.style.overflowY = 'scroll';
-
-        preloader.style.position = 'absolute';
-        preloader.style.clipPath = 'polygon(0 0, 100% 0, 100% 0, 0 0)';
+        setTimeout(() => {
+          html.style.height = 'auto';
+          html.style.overflowY = 'scroll';
+  
+          preloader.style.position = 'absolute';
+          preloader.style.clipPath = 'polygon(0 0, 100% 0, 100% 0, 0 0)';
+        }, 500);
         
         setTimeout(() => {
           document.querySelector('link[href$="/loading-bar.css"]') && document.querySelector('link[href$="/loading-bar.css"]').remove();

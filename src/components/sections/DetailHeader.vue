@@ -20,10 +20,10 @@ const DesSmallTitle = ref();
 const DesBigTitle = ref();
 const DesArrowBack = ref();
 const DesScrollDown = ref();
-
-const route = useRouter();
-
 const detailImg = ref();
+
+const router = useRouter();
+
 const desAnim = gsap.timeline();
 
 onMounted(() => {
@@ -66,15 +66,25 @@ onMounted(() => {
             start: 'top top',
             end: 'bottom top',
             scrub: 1.6,
-            // markers: true
         },
         scale: 1.2
     });
 });
+
+const backHome = () => {
+    gsap.to('#destinationPageTransition', {
+        xPercent: 0,
+        duration: .5,
+        ease: 'Power4.easeOut'
+    });
+    setTimeout(()=>{
+        router.back();
+    }, 600);
+}
 </script>
 
 <template>
-    <div class='relative flex items-center w-screen portrait:h-[80vh] landscape:h-screen overflow-hidden'>
+    <div class='relative flex items-center w-screen portrait:h-[80vh] landscape:h-[95vh] overflow-hidden'>
         <img class='z-0 object-cover w-full h-full' 
             :src="image"
             alt="heading img"
@@ -101,7 +111,7 @@ onMounted(() => {
 
         <button class="absolute top-[1.5%] portrait:left-[1%] landscape:left-[2%] landscape:top-[3%] z-10 radial-gradient w-[15vw] h-[15vw] sm:w-[5vw] sm:h-[5vw] flex justify-center items-center cursor-point"
                 ref="DesArrowBack"
-                @click="route.back">
+                @click="backHome">
             <img src="../../assets/arrow-back.svg" class="h-[50%]" alt="back home button"/>
         </button>
     </div>

@@ -27,8 +27,6 @@ onMounted(() => {
         ease: "power4.out"
     })
 });
-
-
 </script>
 
 <template>
