@@ -28,6 +28,7 @@ onMounted(() => {
         let delay = 0;
         
         //check mobile
+        window.innerWidth < 500 ? mobile.value = true : mobile.value = false;
         window.addEventListener('resize', () => {
             window.innerWidth < 500 ? mobile.value = true : mobile.value = false;
         }) 
@@ -137,19 +138,23 @@ onMounted(() => {
                     class='h-full sm:w-screen object-cover'></video>
         </div>
 
-        <img class='absolute -bottom-[2vh] -right-[15vw] w-[150vw]
-                            sm:-bottom-[10vh] sm:-right-[20vw] sm:w-screen
-                    transition duration-300 ease-out md:transition-none z-20'
-            ref="mountainTwoImg"
-            :src="mode.darkMode ? '/header/night/mountain-2-night.webp' : '/header/day/mountain-2.webp'"
-        />
+        <picture class='absolute -bottom-[2vh] -right-[15vw] w-[150vw] 
+                                 sm:-bottom-[10vh] sm:-right-[20vw] sm:w-screen
+                        transition duration-300 ease-out md:transition-none z-20'
+                ref="mountainTwoImg">
+          <source :src="mode.darkMode ? '/header/night/mountain-2-night.webp' : '/header/day/mountain-2.webp'" type="image/webp"/>
+          <source :src="mode.darkMode ? '/header/night/mountain-2-night.png' : '/header/day/mountain-2.png'" type="image/png"/>
+          <img :src="mode.darkMode ? '/header/night/mountain-2-night.webp' : '/header/day/mountain-2.webp'" class='w-full'/>
+        </picture>
 
-        <img class='absolute -left-[30vw] -bottom-[10vw] w-[150vw] 
-                            sm:-left-[15vw] sm:-bottom-[13vh] sm:w-screen
-                transition duration-300 ease-out md:transition-none z-30'
-            ref="mountainOneImg"
-            :src="mode.darkMode ? '/header/night/mountain-1-night.webp' :'/header/day/mountain-1.webp'"
-        />
+        <picture class='absolute -left-[30vw] -bottom-[10vw] w-[150vw] 
+                                 sm:-left-[15vw] sm:-bottom-[13vh] sm:w-screen
+                        transition duration-300 ease-out md:transition-none z-30'
+                 ref="mountainOneImg">
+          <source :src="mode.darkMode ? '/header/night/mountain-1-night.webp' : '/header/day/mountain-1.webp'" type="image/webp"/>
+          <source :src="mode.darkMode ? '/header/night/mountain-1-night.png' : '/header/day/mountain-1.png'" type="image/png"/>
+          <img :src="mode.darkMode ? '/header/night/mountain-1-night.webp' :'/header/day/mountain-1.webp'" class='w-full'/>
+        </picture>
 
         <div class='absolute top-[15vh] md:top-[13vh] text-white font-anton uppercase text-center left-1/2 -translate-x-1/2 drop-shadow-lg transition duration-700 ease-out z-40 origin-center'
                 id='main-title'
@@ -164,14 +169,16 @@ onMounted(() => {
             <h1 class='text-7xl md:text-[10vw] z-0'>wonderer</h1>
         </div>
 
-        <img class='absolute -left-[95vw] -bottom-[25vw] w-[280vw]
-                            md:portrait:-left-[6vw] md:portrait:-bottom-[5vh] md:portrait:w-[110vw]
-                            sm:-left-[1vw] sm:-bottom-[17vh] sm:w-screen
-                            2xl:-left-[1vw] 2xl:-bottom-[17vh] 2xl:w-screen
-                transition duration-300 ease-out md:transition-none z-50'
-            ref="personImg"
-            :src="mode.darkMode ? '/header/night/person-night.webp' : '/header/day/person-day.webp'"
-        />
+        <picture class='absolute -left-[95vw] -bottom-[25vw] w-[280vw]
+                                 md:portrait:-left-[6vw] md:portrait:-bottom-[5vh] md:portrait:w-[110vw]
+                                 sm:-left-[1vw] sm:-bottom-[17vh] sm:w-screen
+                                 2xl:-left-[1vw] 2xl:-bottom-[17vh] 2xl:w-screen
+                        transition duration-300 ease-out md:transition-none z-50'
+                 ref="personImg">
+            <source :src="mode.darkMode ? '/header/night/person-night.webp' : '/header/day/person-day.webp'" type="image/webp"/>
+            <source :src="mode.darkMode ? '/header/night/person-night.webp' : '/header/day/person-day.png'" type="image/png"/>
+            <img :src="mode.darkMode ? '/header/night/person-night.webp' : '/header/day/person-day.webp'" class='w-full' />
+        </picture>
 
         <div :class="`absolute bottom-0 h-[80px] md:h-[100px] z-[60] w-full ${mode.darkMode ? 'header-gradient-dark' : 'header-gradient'}`"></div>
 
